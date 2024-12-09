@@ -1,0 +1,105 @@
+/* Reset styles */
+
+html {
+    margin_le: 0;
+    padding: 0%;
+}
+
+.hidden {
+        display: none;
+    }
+
+
+body {
+
+    background-color: #2B345E;
+}
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #cbd9ef;
+}
+
+
+h2 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #cbd9ef;
+}
+
+
+p {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+
+}
+
+
+.center {
+    text-align: center;
+}
+
+.separator {
+                width: 100%;
+                margin: auto;
+                border: 2px solid #BA5F2A;
+            }
+
+    form {
+        width: 100%; /* Set width for the form element */
+        text-align: center; /* Center align text content within the form */
+    }
+
+ form input[type="text"],
+    form textarea {
+        width: 95%; /* Set width to fill the entire form width */
+
+
+    }
+    form button {
+        width: 100px;
+    }
+
+
+.announcement-content {
+
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+
+
+}
+
+/* CSS for download link */
+.announcement-content a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
+
+}
+
+.announcement_snippet{
+
+      height: 50%;
+        width:50%;
+      margin-right: 1.5%;
+  background-color: #ffffff;
+  border-radius: 5px;
+
+
+
+            }
+  .announcement_snippet h2{
+                text-align: center;
+                font-size: x-large;
+                color: #cbd9ef;
+            }
+    .announcement_snippet h3{
+                text-align: center;
+                font-size: x-large;
+                color: #0e0e0e;
+            }
+
+.announcement_snippet p{
+    color: #0e0e0e;
+
+}

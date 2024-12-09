@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>About UDCA</title>
+        <style>
+            body {
+                padding: 0px;
+                margin: 0px;
+                background-color: #2b345e;
+                color: #cbd9ef;
+                overflow-x: hidden;
+            }
+
+            h1 {
+                color: #cbd9ef;
+                padding: 1%;
+                padding-left: 2%;
+                font-size: 32px;
+                font-family: "Brawler", serif;
+            }
+
+            h2, h4 {
+                color: #cbd9ef;
+                padding-top: 1%;
+                padding-left: 2%;
+                font-family: "Brawler", serif;
+            }
+
+            .mainText{
+                color: #cbd9ef;
+                padding-left: 2%;
+                width: 70%;
+                font-size: 21px;
+                line-height: 150%;
+                font-family: "Vollkorn", serif;
+            }
+
+            .image-grid {
+                display: grid;
+                grid-template-columns: repeat(
+                    5,
+                    1fr
+                ); /* Creates a 5-column layout */
+                gap: 5%; /* Adjust the gap between items as needed */
+                padding-left: 3%;
+                padding-right: 3%;
+                /* padding-top: 1%; */
+            }
+
+            .image-item {
+                text-align: center; /* Center-aligns the text below the image */
+                color: #cbd9ef;
+                font-family: "Vollkorn", serif;
+            }
+
+            .imageContainer {
+                width: 100%; /* Set the width as needed */
+                height: 0;
+                padding-top: 140%; /* This creates a square aspect ratio */
+                position: relative;
+            }
+
+            .imageContainer img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Ensures the image covers the area without distortion */
+            }
+
+            .hallOfFame {
+                display: grid;
+                grid-template-columns: repeat(
+                    5,
+                    1fr
+                ); /* Creates a 5-column layout */
+                gap: 5%; /* Adjust the gap between items as needed */
+                padding-left: 3%;
+                padding-right: 3%;
+                padding-bottom: 5%;
+            }
+
+            .links{
+                color: #cbd9ef;
+            }
+            .hallOfFame p {
+                text-align: center;
+                color: #cbd9ef;
+                font-family: "Vollkorn", serif;
+            }
+
+            .separator{
+                width: 85%;
+                margin: auto;
+                border: 2px solid #BA5F2A;
+            }
+
+            .leadership_container{
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* Creates 3 equal-width columns */
+                gap: 20px; /* Adjust the spacing between the boxes */
+                padding-left: 2%;
+            }
+
+            .leadership_container li{
+                color: white
+            }
+
+            .state-rep-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* Two columns */
+                gap: 20px; /* Adjust spacing between lists */
+                margin: 0 auto; /* Centers the grid */
+            }
+
+            .executive_council{
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            .executive_council img{
+                height: 100px;
+            }
+
+            .constitution p, .mainText, .constitution{
+                padding-left: 2%;
+                width: 70%;
+                font-size: 21px;
+                line-height: 150%;
+                font-family: "Vollkorn", serif;
+                color: white;
+            }
+
+            .links, .executive_council {
+                color: white;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        {% load static %}
+        {% include "header.html" %}
+
+        <div class="upper_container">
+            <h1>About the UDCA</h1>
+
+            <p class="mainText">
+                The Utah Debate Coaches Association provides all debate coaches, regardless of type of debate, region,
+                or pedagogical style, with avenues for professional development and support.
+                The goal of the organization is to strengthen the ability of coaches to provide meaningful learning
+                experiences for their debaters. Our ultimate vision is to provide opportunities for high school coaches to
+                strengthen their abilities in order to provide stronger learning environments for their students.
+            </p>
+            <ul class="links">
+                <a href="https://utahdebatecoaches.org/wp-content/uploads/2020/11/Coaches-Code-Of-Ethics-1.pdf"><li>Coach Code of Ethics</li></a>
+                <a href="https://utahdebatecoaches.org/wp-content/uploads/2022/12/2021_NSDA-Code-of-Honor_Poster_2021-02-12.pdf"><li>Student Code of Honor</li></a>
+                <a href="https://utahdebatecoaches.org/wp-content/uploads/2020/08/Judges-Code-Of-Ethics-1.pdf"><li>Judge Code of Ethics</li></a>
+            </ul>
+        </div>
+        <hr class="separator">
+        <h1>UDCA Leadership</h1>
+        <h4>Executive Council</h4>
+        <div class="executive_council">
+            <div>
+                <img src="{% static 'standin.png' %}">
+                <p>President Elect</p>
+            </div>
+            <div>
+                <img src="{% static 'standin.png' %}">
+                <p>Director of Tournaments</p>
+            </div>
+            <div>
+                <img src="{% static 'standin.png' %}">
+                <p>Treasurer</p>
+            </div>
+            <div>
+                <img src="{% static 'standin.png' %}">
+                <p>Director of Professional Development</p>
+            </div>
+            <div>
+                <img src="{% static 'standin.png' %}">
+                <p>Director of Public Relations</p>
+            </div>
+            <div>
+                <img src="{% static 'standin.png' %}">
+                <p>Director of Communication</p>
+            </div>
+            <div>
+                <img src="{% static 'standin.png' %}">
+                <p>Director of Judges</p>
+            </div>
+        </div>
+        <div class="leadership_container">
+            <div class="committies">
+                <h4>Commities</h4>
+                <ul>
+                    <li>Congress</li>
+                    <li>Middle School</li>
+                    <li>Elementary</li>
+                    <li>Speech Art Tournaments</li>
+                </ul>
+            </div>
+            <div class="state_reps">
+                <h4>State Reps</h4>
+                    <div class="state-rep-grid">
+                        <div class="rep-title">
+                            6A
+                            <ul>
+                                <li>Region</li>
+                                <li>Region</li>
+                                <li>Region</li>
+                            </ul>
+                        </div>
+                        <div class="rep-title">
+                            5A
+                            <ul>
+                                <li>Region</li>
+                                <li>Region</li>
+                                <li>Region</li>
+                            </ul>
+                        </div>
+                        <div class="rep-title">
+                            4A
+                            <ul>
+                                <li>Region</li>
+                                <li>Region</li>
+                                <li>Region</li>
+                            </ul>
+                        </div>
+                        <div class="rep-title">
+                            3A
+                            <ul>
+                                <li>Region</li>
+                                <li>Region</li>
+                                <li>Region</li>
+                            </ul>
+                        </div>
+                        <div class="rep-title">
+                            2A
+                            <ul>
+                                <li>Region</li>
+                                <li>Region</li>
+                                <li>Region</li>
+                            </ul>
+                        </div>
+                        <div class="rep-title">
+                            1A
+                            <ul>
+                                <li>Region</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <div class="other_leaders">
+                <h4>Other Leaders</h4>
+                <ul>
+                    <li>Great Salt Lake NSDA District Chair</li>
+                    <li>Sundance NSDA District Chair</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="separator">
+        <div class="constitution">
+            <h1>Constitution</h1>
+            <p>Avaliable <a href="https://utahdebatecoaches.org/landing-page/coaches-2/utah-debate-coaches-association-constitution/">here</a></p>
+        </div>
+        {% include 'page/footer.html' %}
+{#        <h2>2020-2021 UDCA Executive Committee</h2>#}
+{##}
+{#        <div class="image-grid">#}
+{#            <div class="image-item">#}
+{#                <div class="imageContainer">#}
+{#                    <img#}
+{#                        src="https://i0.wp.com/utahdebatecoaches.org/wp-content/uploads/2020/07/rachel-e1595985365599.jpg?resize=99%2C146&amp;ssl=1"#}
+{#                        alt=""#}
+{#                    />#}
+{#                </div>#}
+{#                <p>Rachel Billings, President</p>#}
+{#            </div>#}
+{#            <div class="image-item">#}
+{#                <div class="imageContainer">#}
+{#                    <img#}
+{#                        src="https://i0.wp.com/utahdebatecoaches.org/wp-content/uploads/2020/07/jake-e1595985330149.jpg?resize=66%2C64&amp;ssl=1"#}
+{#                        alt=""#}
+{#                    />#}
+{#                </div>#}
+{#                <p>Jacob Nelson, Middle School Rep</p>#}
+{#            </div>#}
+{#            <div class="image-item">#}
+{#                <div class="imageContainer">#}
+{#                    <img#}
+{#                        src="https://i0.wp.com/utahdebatecoaches.org/wp-content/uploads/2020/07/mike.jpg?resize=150%2C150&amp;ssl=1"#}
+{#                        alt=""#}
+{#                    />#}
+{#                </div>#}
+{#                <p>Mike Shackelford, President Elect</p>#}
+{#            </div>#}
+{#            <div class="image-item">#}
+{#                <div class="imageContainer">#}
+{#                    <img#}
+{#                        src="https://i0.wp.com/utahdebatecoaches.org/wp-content/uploads/2020/07/roundy-profile-pic-e1595984619420.jpg?resize=150%2C150&amp;ssl=1"#}
+{#                        alt=""#}
+{#                    />#}
+{#                </div>#}
+{#                <p>Tanya Roundy, UDCA Tournament Director</p>#}
+{#            </div>#}
+{#            <div class="image-item">#}
+{#                <div class="imageContainer">#}
+{#                    <img#}
+{#                        src="https://i0.wp.com/utahdebatecoaches.org/wp-content/uploads/2020/07/doug.jpg?resize=150%2C150&amp;ssl=1"#}
+{#                        alt=""#}
+{#                    />#}
+{#                </div>#}
+{#                <p>Doug Welton, Treasurer</p>#}
+{#            </div>#}
+{#            <!-- Repeat the above div for each image you have -->#}
+{#        </div>#}
+{##}
+{#        <h2>UDCA Hall of Fame</h2>#}
+{##}
+{#        <p class="mainText">#}
+{#            The following coaches have been inducted into the Utah Debate#}
+{#            Coaches Hall of Fame. We thank them for their dedication and efforts#}
+{#            on the part of their students and teams.#}
+{#        </p>#}
+{##}
+{#        <div class="hallOfFame">#}
+{#            <p>2015 – Leslie Robinett</p>#}
+{#            <p>2015 – Ryan Hoglund</p>#}
+{#            <p>2016 – Dave Smith</p>#}
+{#            <p>2016 – Carol Shackelford</p>#}
+{#            <p>2016 – Laren Swensen</p>#}
+{#            <p>2016 – Scott Mansfield</p>#}
+{#            <p>2017 – Judie Roberts</p>#}
+{#            <p>2017 – LeeAnn Hyer</p>#}
+{#            <p>2017 – Kent Hyer</p>#}
+{#            <p>2018 – Sherry Duncan</p>#}
+{#            <p>2018 – Gail Scoville</p>#}
+{#            <p>2019-2021 – Jo Daley Croft</p>#}
+{#            <p>2019-2021 – Moses Baca</p>#}
+{#            <p>2019-2021 – Brooke Gregg</p>#}
+{#            <p>2019-2021 – Sharon Ellsworth</p>#}
+{#            <p>2019-2021 – Cindy Sidwell</p>#}
+{#        </div>#}
+    </body>
+</html>

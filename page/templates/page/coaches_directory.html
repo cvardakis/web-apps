@@ -1,0 +1,91 @@
+{% include "header.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coaches Directory</title>
+    <style>
+
+    h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #cbd9ef;
+}
+
+body {
+
+    background-color: #2B345E;
+}
+    table {
+        color: #ffffff;
+        border-collapse: collapse;
+        width: 95%;
+        margin: 20px auto;
+        background: #BA5F2A;
+
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .search_container{
+        display: flex;
+       justify-content: flex-end;
+       width: 95%;
+       margin: auto;
+    }
+
+
+</style>
+</head>
+<body>
+<div class="table">
+    <h1>Coaches Directory</h1>
+    <div class="search_container">
+        <input type="text" id="search-bar" placeholder="Search...">
+    </div>
+    <table>
+        <thead>
+            <tr>
+            {% for header in table_data.0 %}
+                <th>{{ header }}</th>
+            {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table_data|slice:"1:" %}
+                <tr>
+                    {% for value in row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        const searchBar = document.getElementById('search-bar');
+        const tableRows = document.querySelectorAll('table tbody tr');
+
+        searchBar.addEventListener('keyup', function() {
+            const searchTerm = this.value.toLowerCase();
+
+            tableRows.forEach(row => {
+                let rowText = '';
+                row.querySelectorAll('td').forEach(cell => {
+                    rowText += cell.textContent.toLowerCase();
+                });
+
+                row.style.display = rowText.includes(searchTerm) ? '' : 'none';
+            });
+        });
+    </script>
+</div>
+{% include "page/footer.html" %}
+</body>
+
+</html>

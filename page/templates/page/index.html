@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+    <head>
+        {% load static %}
+        <title>Homepage</title>
+        <style>
+
+            body {
+                padding: 0px;
+                margin: 0px;
+                background-color: #2b345e;
+                overflow-x: hidden;
+            }
+
+            .mainButtonCont {
+                display: grid;
+                grid-template-columns: 1fr auto 1fr; /* Three columns: side columns flexible, middle column content-based */
+                justify-items: center; /* Center items horizontally */
+                gap: 20px; /* Space between grid items */
+                margin-top: 2%;
+                margin-bottom: 2%;
+
+            }
+
+            .mainButtonCont a {
+                font-size: x-large;
+                color: #2B345E;
+                text-decoration: none;
+                /* No need for padding on the individual links to affect spacing,
+                       as gap handles spacing between items */
+            }
+
+            .mainButtonCont a {
+                position: relative;    /* Allows positioning the pseudo-element relative to the button */
+                padding: 10px;
+                background-color: #CBD9EF;
+                border-radius: 15px;
+                text-decoration: none; /* Example: remove underline */
+                color: #2B345E; /* Example: set text color */
+            }
+
+            .mainButtonCont a::after {
+              content: '';         /* Required for pseudo-element */
+              position: absolute;
+              top: 10px;            /* Adjust offset from top */
+              left: -5px;           /* Adjust offset from left */
+              width: 100%;          /* Adjust width relative to main button */
+              height: 100%;         /* Adjust height relative to main button */
+              background-color: #ba5f2a;
+              border-radius: 12px; /* Slightly less rounded */
+              z-index: -2;         /* Place behind the button */
+            }
+
+
+            {##}
+            .mainButtonCont a:hover {
+                transform: scale(1.05);
+            }
+
+            .mainButtonCont a:hover::after {
+                position: relative; /* Move the offset shape further back on hover */
+            }
+    .container  {
+
+        background-color: #ba5f2a;
+    }
+
+
+
+  .Highlights{
+        flex: 1;
+      height: 50%;
+        width:25%;
+      margin-right: 1.5%;
+  background-color: #ffffff;
+      padding: 1%}
+
+  .Highlights h2{
+                text-align: center;
+                font-size: x-large;
+                color: #ffffff;
+            }
+    .Highlights h3{
+                text-align: center;
+                font-size: x-large;
+                color: #0e0e0e;
+            }
+
+.Highlights p{
+    color: #0e0e0e;
+}
+
+
+  .announcement_snippet{
+ flex: 1;
+      height: 50%;
+        width:25%;
+      margin-right: 1.5%;
+      padding: 1%;
+
+  background-color: #ffffff;
+  border-radius: 5px;}
+
+  .announcement_snippet h2{
+                text-align: center;
+                font-size: x-large;
+                color: #ffffff;
+            }
+    .announcement_snippet h3{
+                text-align: center;
+                font-size: x-large;
+                color: #0e0e0e;
+            }
+
+.announcement_snippet p{
+    color: #0e0e0e;
+}
+
+            .calendar{
+
+                  width:50%;
+                {#margin-right: 5%;#}
+  background-color: #ba5f2a;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+            }
+            .calendar iframe {
+
+  display: block;
+  width: 100%;
+  height: 600px;
+  border: none;
+}
+
+            .calendar h2{
+                flex: 2;
+                text-align: center;
+                font-size: x-large;
+                color: #ffffff;
+            }
+
+            .front_image{
+                background-image: url({% static 'debate_placeholder.jpg' %});
+                background-size: cover;
+                {#background-position: center;#}
+                height: 500px;
+            }
+
+            .front_image img{
+                width: 30%;
+            }
+
+            .top_banner{
+                text-align: center;
+                color: #cbd9ef;
+            }
+
+            .row
+            {
+                 display: flex;
+                  justify-content: space-around;
+                 margin: 5%;
+            }
+        </style>
+    </head>
+    <body>
+        {% include "header.html" %}
+        {% load static %}
+        <div class="top_banner">
+            <h1>Utah Debate Coaches Association</h1>
+        </div>
+        <div class="front_image"></div>
+        <div>
+        </div>
+        <div class="mainButtonCont">
+            <a href="{% url "announcement" %}" role="button">Announcement</a>
+            <a href="{% url "register" %}" role="button">Coach Sign Up</a>
+            <a href="{% url "highlights" %}" role="button">Highlights</a>
+        </div>
+
+        <div class="row">
+        <div class="announcement_snippet">
+           <a href="{% url 'announcement'%}" style="text-decoration: none;">
+            <div class="container"><h2 >Latest Announcement</h2></div>
+
+           <h3>{{ latest_announcement.title }}</h3>
+            <p>{{ latest_announcement.description }}</p>
+            <p>{{ latest_announcement.created_at|date  }}</p>
+           </a>
+
+        </div>
+
+            <div class="Highlights">
+  <a href="{% url 'highlights'%}" style="text-decoration: none;">
+            <div class="container"><h2 >Latest Highlights</h2></div>
+
+           <h3>{{ latest_highlights.title }}</h3>
+            <p>{{ latest_highlights.description }}</p>
+      {% if latest_highlights.image %}
+      <div style="text-align: center"><img src="{{ latest_highlights.image.url }}" alt="{{ highlight.title }}" style="width: 100%; height: auto;"></div>
+      {% endif %}
+      <div style="text-align: center"><p>{{ latest_highlights.created_at|date }}</p></div>
+
+
+           </a>
+            </div>
+        <div class="calendar">
+            <h2>Calendar</h2>
+            <iframe
+                src="https://calendar.google.com/calendar/embed?src=9n0lh543s8vld7ksih32qm1jg8%40group.calendar.google.com&amp;ctz=America%2FDenver"
+                width=100%
+                height=100%
+            ></iframe>
+        </div>
+
+        </div>
+    {% include 'page/footer.html' %}
+    </body>
+</html>

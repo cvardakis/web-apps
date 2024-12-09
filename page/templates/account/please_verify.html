@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify</title>
+    <style>
+    .my-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .my-button:hover {
+        background-color: #0056b3;
+    }
+
+            body {
+                padding: 0px;
+                margin: 0px;
+                background-color: #2b345e;
+                color: #cbd9ef;
+                overflow-x: hidden;
+            }
+
+            h1 {
+                color: #cbd9ef;
+                padding: 1%;
+                padding-left: 2%;
+                font-size: 32px;
+                font-family: "Brawler", serif;
+            }
+
+            h2 {
+                color: #cbd9ef;
+                padding-top: 1%;
+                padding-left: 2%;
+                font-family: "Brawler", serif;
+            }
+
+            .mainText{
+                color: #cbd9ef;
+                padding-left: 2%;
+                width: 70%;
+                font-size: 21px;
+                line-height: 150%;
+                font-family: "Vollkorn", serif;
+            }
+
+            .image-grid {
+                display: grid;
+                grid-template-columns: repeat(
+                    5,
+                    1fr
+                ); /* Creates a 5-column layout */
+                gap: 5%; /* Adjust the gap between items as needed */
+                padding-left: 3%;
+                padding-right: 3%;
+                /* padding-top: 1%; */
+            }
+
+            .image-item {
+                text-align: center; /* Center-aligns the text below the image */
+                color: #cbd9ef;
+                font-family: "Vollkorn", serif;
+            }
+
+            .imageContainer {
+                width: 100%; /* Set the width as needed */
+                height: 0;
+                padding-top: 140%; /* This creates a square aspect ratio */
+                position: relative;
+            }
+
+            .imageContainer img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Ensures the image covers the area without distortion */
+            }
+
+            .hallOfFame {
+                display: grid;
+                grid-template-columns: repeat(
+                    5,
+                    1fr
+                ); /* Creates a 5-column layout */
+                gap: 5%; /* Adjust the gap between items as needed */
+                padding-left: 3%;
+                padding-right: 3%;
+                padding-bottom: 5%;
+            }
+
+            .links{
+                color: #cbd9ef;
+            }
+            .hallOfFame p {
+                text-align: center;
+                color: #cbd9ef;
+                font-family: "Vollkorn", serif;
+            }
+
+            .separator{
+                width: 85%;
+                margin: auto;
+                border: 2px solid #BA5F2A;
+            }
+
+            .leadership_container{
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
+                gap: 20px; /* Adjust the spacing between the boxes */
+                padding-left: 2%;
+            }
+
+            .leadership_container li{
+                color: white
+            }
+
+            .state-rep-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* Two columns */
+                gap: 20px; /* Adjust spacing between lists */
+                margin: 0 auto; /* Centers the grid */
+            }
+
+            .constitution p, .mainText {
+                padding-left: 2%;
+                width: 70%;
+                font-size: 21px;
+                line-height: 150%;
+                font-family: "Vollkorn", serif;
+                color: white;
+            }
+
+            .links {
+                color: white;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+        </style>
+
+</head>
+
+<body>
+{% include "header.html" %}
+
+        <div class="upper_container">
+            <h1>Verification Required to access Directory</h1>
+
+            <p class="mainText">
+                All verification is manually done by the admin.Please wait for your account to be verified.Please Sign up if you don't have an account yet.
+                <br>
+                <br>
+                <a href="{% url 'account_login' %}" class="my-button">Sign up</a>
+{#                <a href="{{ signup_url }}" class="my-button" >sign up</a>#}
+            </p>
+        </div>
+
+</body>
+</html>

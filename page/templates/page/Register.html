@@ -1,0 +1,81 @@
+<!-- user_profile_form.html -->
+
+<style>
+body {
+
+    background-color: #2B345E;
+}
+
+    .form-field {
+        margin-bottom: 10px;
+     text-align: center;
+    color: white}
+
+    .success-message,
+    .fail-message {
+        text-align: center;}
+     .button-center {
+        display: block;
+        {#margin: 0 auto; /* This centers the button horizontally */#}
+         text-align: center;}
+
+
+</style>
+{% include "header.html" %}
+
+<div class="wpforms-container">
+<form method="post" action=" ">
+    {% csrf_token %}
+
+    <div class="form-field">
+        <label for="{{ form.first_name.id_for_label }}">First Name:</label>
+         <br>
+        {{ form.first_name }}
+    </div>
+
+    <div class="form-field">
+        <label for="{{ form.last_name.id_for_label }}">Last Name:</label>
+        <br>
+        {{ form.last_name }}
+    </div>
+
+    <div class="form-field">
+        <label for="{{ form.user_email.id_for_label }}">Email:</label>
+         <br>
+        {{ form.user_email }}
+    </div>
+
+    <div class="form-field">
+        <label for="{{ form.phone_number.id_for_label }}">Phone Number:</label>
+         <br>
+        {{ form.phone_number }}
+    </div>
+
+    <div class="form-field">
+        <label for="{{ form.school.id_for_label }}">School:</label>
+         <br>
+        {{ form.school }}
+    </div>
+
+    <div class="form-field">
+        <label for="{{ form.role.id_for_label }}">Role:</label>
+         <br>
+        {{ form.role }}
+    </div>
+    <div class="button-center">
+    <button type="submit">Submit</button>
+    </div>
+
+</form>
+
+{% if success_message %}
+    <div class="success-message">
+        <h1>    {{ success_message }}  </h1>
+    </div>
+{% else %}
+    <div class="fail-message">
+        <h1>    {{ success_message }}  </h1>
+    </div>
+{% endif %}
+
+</div>

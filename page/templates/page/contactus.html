@@ -1,0 +1,55 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <style>
+        .form-container {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .form-field {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .success-message,
+        .fail-message {
+            text-align: center;
+        }
+
+        .button-center {
+            text-align: center;
+        }
+    </style>
+    {% include "header.html" %}
+</head>
+<body>
+<div class="form-container">
+    <form action="/contactus/" method="post">
+   {% csrf_token %}
+   {% for field in form %}
+       <div class="fieldWrapper">
+           {{ field.errors }}
+           {{ field.label_tag }} {{ field }}
+       </div>
+   {% endfor %}
+   <input type="submit" value="Submit">
+    </form>
+
+    {% if success_message %}
+        <div class="success-message">
+            <h1>{{ success_message }}</h1>
+        </div>
+    {% else %}
+        <div class="fail-message">
+            <h1>{{ success_message }}</h1>
+        </div>
+    {% endif %}
+</div>
+</body>
+</html>
